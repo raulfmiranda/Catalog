@@ -10,4 +10,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="catalog.raulfmiranda.com.catalog.ui.activity.CadastrarItemActivity">
 
+    <TextView
+        android:id="@+id/nomeItemTextView"
+        android:layout_alignParentTop="true"
+        android:text="Entre com o nome do livro: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/nomeItemEditText"
+        android:layout_below="@id/nomeItemTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/cadastroConcluido"
+        android:layout_below="@id/nomeItemEditText"
+        android:layout_alignParentRight="true"
+        android:text="Concluir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>

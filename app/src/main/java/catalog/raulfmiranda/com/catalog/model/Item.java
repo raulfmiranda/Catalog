@@ -62,6 +62,36 @@ public class Item {
         this.titulo = titulo;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Item item = (Item) o;
+
+        if (ano != item.ano) return false;
+        if (quantidade != item.quantidade) return false;
+        if (id != null ? !id.equals(item.id) : item.id != null) return false;
+        if (titulo != null ? !titulo.equals(item.titulo) : item.titulo != null) return false;
+        if (descricao != null ? !descricao.equals(item.descricao) : item.descricao != null)
+            return false;
+        if (autor != null ? !autor.equals(item.autor) : item.autor != null) return false;
+        return categoria != null ? categoria.equals(item.categoria) : item.categoria == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + ano;
+        result = 31 * result + quantidade;
+        result = 31 * result + (titulo != null ? titulo.hashCode() : 0);
+        result = 31 * result + (descricao != null ? descricao.hashCode() : 0);
+        result = 31 * result + (autor != null ? autor.hashCode() : 0);
+        result = 31 * result + (categoria != null ? categoria.hashCode() : 0);
+        return result;
+    }
+
     public static class Builder {
         private Long id;
         private int ano, quantidade;
