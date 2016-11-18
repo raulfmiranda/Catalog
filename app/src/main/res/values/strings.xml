@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Catalog</string>
     <string name="categorias">Categorias</string>
+    <string name="deletar">Deletar</string>
 </resources>
