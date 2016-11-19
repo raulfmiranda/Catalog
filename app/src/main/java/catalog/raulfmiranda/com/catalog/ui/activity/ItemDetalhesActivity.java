@@ -1,6 +1,7 @@
 package catalog.raulfmiranda.com.catalog.ui.activity;
 
 import android.content.DialogInterface;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,14 +26,22 @@ public class ItemDetalhesActivity extends BasicActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         id = getIntent().getLongExtra("id", -1);
         Item item = ItemControl.getInstance().getItemById(id);
         String detalhes;
 
+        String titulo = item.getTitulo() != null ? item.getTitulo().toString() : "";
+        String autor = item.getAutor() != null ? item.getAutor().toString() : "";
+        String descricao = item.getDescricao() != null ? item.getDescricao().toString() : "";
+
         itemDetalhes = (TextView) findViewById(R.id.item_detalhes);
-        detalhes = "Título: " + item.getTitulo().toString() +
-                "\nAutor: " + item.getAutor().toString() +
-                "\nQuantidade: " + item.getQuantidade() + "    Ano: " + item.getAno();
+        detalhes = "Título: " + titulo +
+                "\nAutor: " + autor +
+                "\n\nDescrição: " + descricao +
+                "\n\nQuantidade: " + item.getQuantidade() + "    Ano: " + item.getAno();
         itemDetalhes.setText(detalhes);
     }
 
@@ -50,6 +59,10 @@ public class ItemDetalhesActivity extends BasicActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+
         if(item.getItemId() == R.id.action_deletar) {
             AlertDialog alerta;
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
