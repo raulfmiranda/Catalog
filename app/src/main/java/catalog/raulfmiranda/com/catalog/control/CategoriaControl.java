@@ -93,4 +93,17 @@ public final class CategoriaControl {
             categoriaMap.put(categoria.getCodigo(), categoria);
         }
     }
+
+    public Categoria getCategoriaById(Long id) {
+        return categoriaMap.get(id);
+    }
+
+    public Categoria getCategoriaByName(String nome) {
+        for (Categoria categoria : list) {
+            if(categoria.getNome().equals(nome)) {
+                return categoria;
+            }
+        }
+        return null;
+    }
 }

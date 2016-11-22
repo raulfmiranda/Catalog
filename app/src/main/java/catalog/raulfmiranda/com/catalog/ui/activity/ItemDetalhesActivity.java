@@ -36,10 +36,12 @@ public class ItemDetalhesActivity extends BasicActivity {
         String titulo = item.getTitulo() != null ? item.getTitulo().toString() : "";
         String autor = item.getAutor() != null ? item.getAutor().toString() : "";
         String descricao = item.getDescricao() != null ? item.getDescricao().toString() : "";
+        String categoria = item.getCategoria() != null ? item.getCategoria().getNome() : "";
 
         itemDetalhes = (TextView) findViewById(R.id.item_detalhes);
         detalhes = "Título: " + titulo +
                 "\nAutor: " + autor +
+                "\nCategoria: " + categoria +
                 "\n\nDescrição: " + descricao +
                 "\n\nQuantidade: " + item.getQuantidade() + "    Ano: " + item.getAno();
         itemDetalhes.setText(detalhes);
