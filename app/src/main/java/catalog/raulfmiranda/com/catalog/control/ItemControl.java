@@ -100,27 +100,5 @@ public final class ItemControl {
 
         return lista;
     }
-//
-//    private List<Item> oldCarregarItems() {
-//        List<Item> items = new ArrayList<>();
-//
-//        List<Categoria> categorias = CategoriaControl.getInstance().retrieveCategorias();
-//        Categoria livro = categorias.get(0);
-//        Categoria revista = categorias.get(1);
-//
-//        Item.Builder livroBuilder = new Item.Builder(System.nanoTime(), "Java for Beginners")
-//                .setAno(2013).setAutor("Glauber Rocha").setQuantidade(3)
-//                .setDescricao("Livro para programadores iniciantes.")
-//                .setCategoria(livro);
-//
-//        Item.Builder revistaBuilder = new Item.Builder(System.nanoTime(), "Geek on the table")
-//                .setAno(2015).setAutor("Robson Duarte").setQuantidade(2)
-//                .setDescricao("Revista para geeks.")
-//                .setCategoria(revista);
-//
-//        items.add(livroBuilder.build());
-//        items.add(revistaBuilder.build());
-//
-//        return items;
-//    }
+
 }
